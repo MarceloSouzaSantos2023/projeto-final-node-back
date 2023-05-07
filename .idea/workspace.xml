@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="514a920b-22e0-4cab-99c9-fcaa79930e98" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +26,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/VIRTUS/Desktop/projeto-final-node-back",
+    "last_opened_file_path": "C:/Users/VIRTUS/Desktop/New folder/projeto-final-node-back",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -76,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683484720800</updated>
       <workItem from="1683484721984" duration="148000" />
+      <workItem from="1683485595260" duration="716000" />
     </task>
     <servers />
   </component>
