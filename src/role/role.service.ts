@@ -42,8 +42,8 @@ export class RoleService implements OnModuleInit {
 
   public async removeRoleById(payload: Request | any): Promise<any> {
     try {
-      let response = await this.repository.createQueryBuilder(process.env.DATABASE_NAME)
-        .where(`${process.env.DATABASE_NAME}.id = :id`, { id: payload})
+      let response = await this.repository.createQueryBuilder(process.env.PG_DB)
+        .where(`${process.env.PG_DB}.id = :id`, { id: payload})
         .getOne();
       if (response) {
         response.isDelete = !response?.isDelete;
@@ -70,9 +70,9 @@ export class RoleService implements OnModuleInit {
     try {
       let role;
       if (payload?.id) {
-        let response = await this.repository.createQueryBuilder(process.env.DATABASE_NAME)
-          .where(`${process.env.DATABASE_NAME}.id = :id`, { id: payload.id })
-          .andWhere(`${process.env.DATABASE_NAME}.isDelete = false`)
+        let response = await this.repository.createQueryBuilder(process.env.PG_DB)
+          .where(`${process.env.PG_DB}.id = :id`, { id: payload.id })
+          .andWhere(`${process.env.PG_DB}.isDelete = false`)
           .getOne();
         if (response) {
           role = await this.repository.createQueryBuilder()
@@ -89,9 +89,9 @@ export class RoleService implements OnModuleInit {
   private async findRoleBy?(payload: Request | any, type: string): Promise<any> {
     try {
       return await this.repository
-        .createQueryBuilder(process.env.DATABASE_NAME)
-        .where(`${process.env.DATABASE_NAME}.${type} = :${type}`, { [type]: payload[type] })
-        .andWhere(`${process.env.DATABASE_NAME}.isDelete = false`)
+        .createQueryBuilder(process.env.PG_DB)
+        .where(`${process.env.PG_DB}.${type} = :${type}`, { [type]: payload[type] })
+        .andWhere(`${process.env.PG_DB}.isDelete = false`)
         .getOne();
     } catch (error) {
       throw error;
@@ -100,10 +100,10 @@ export class RoleService implements OnModuleInit {
 
   private async insertBaseRole(): Promise<void> {
     try {
-      const response = await this.findRoleById({ id: 1 });
+      const response = await this.findRoleById({ id: '1' });
       if (!response.role) {
         await this.repository.insert(
-          { id: 1, name: "admin", isDelete: false });
+          { id: '1', name: "admin", isDelete: false });
       }
     } catch (error) {
       throw error;

@@ -4,7 +4,7 @@ import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 export class ProductEntity extends BaseEntity {
 
   @PrimaryGeneratedColumn()
-  public id!: number;
+  public id!: string;
 
   @Column({ type: "varchar" })
   public name!: string;

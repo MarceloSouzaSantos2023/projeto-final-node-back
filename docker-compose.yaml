@@ -4,6 +4,7 @@ services:
     container_name: nestapp
     image: francescoxx/nestapp:1.0.0
     build: .
+    command: npm run start-container
     ports:
       - '3000:3000'
     environment:
@@ -22,6 +23,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
+
     ports:
       - '5432:5432'
     volumes:

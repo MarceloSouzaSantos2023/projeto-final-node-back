@@ -13,17 +13,17 @@ import {dataSourceOptions} from "../db/data-source";
   imports: [
     ConfigModule.forRoot({isGlobal: true}),
     UserModule, AuthModule, ProductModule, RoleModule,
-    // TypeOrmModule.forRoot({
-    //   type: process.env.DB_TYPE as any,
-    //   host: process.env.PG_HOST,
-    //   port: parseInt(process.env.PG_PORT),
-    //   database: process.env.PG_DB,
-    //   username: process.env.PG_USER,
-    //   password: process.env.PG_PASSWORD,
-    //   entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    //   synchronize: true // never true in production!
-    // })
-    TypeOrmModule.forRoot(dataSourceOptions)
+    TypeOrmModule.forRoot({
+      type: process.env.DB_TYPE as any,
+      host: process.env.PG_HOST,
+      port: parseInt(process.env.PG_PORT),
+      database: process.env.PG_DB,
+      username: process.env.PG_USER,
+      password: process.env.PG_PASSWORD,
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true // never true in production!
+    })
+    //TypeOrmModule.forRoot(dataSourceOptions)
   ],
   controllers: [AppController],
   providers: [AppService]
