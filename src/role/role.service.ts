@@ -12,7 +12,7 @@ export class RoleService implements OnModuleInit {
   private readonly repository: Repository<RoleEntity>;
 
   public async onModuleInit(): Promise<any> {
-    await this.insertBaseRole();
+    // await this.insertBaseRole();
   }
 
   public async findAllRole(payload: Request | any): Promise<any> {
@@ -100,10 +100,10 @@ export class RoleService implements OnModuleInit {
 
   private async insertBaseRole(): Promise<void> {
     try {
-      const response = await this.findRoleById({ id: "1" });
+      const response = await this.findRoleById({ id: 1 });
       if (!response.role) {
-        await this.repository.save(
-          { id: "1", name: "admin", isDelete: false });
+        await this.repository.insert(
+          { id: 1, name: "admin", isDelete: false });
       }
     } catch (error) {
       throw error;

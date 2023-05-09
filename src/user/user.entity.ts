@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity({name: 'user'})
 export class UserEntity extends BaseEntity {
@@ -15,6 +15,6 @@ export class UserEntity extends BaseEntity {
     @Column({ type: "varchar" })
     public roleId: string;
 
-    @Column("boolean")
+    @Column({type: "boolean"})
     public isDelete: boolean;
 }

@@ -1,14 +1,14 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity({name: 'product'})
 export class ProductEntity extends BaseEntity {
 
   @PrimaryGeneratedColumn()
-  public id!: string;
+  public id!: number;
 
   @Column({ type: "varchar" })
   public name!: string;
 
-  @Column("boolean")
+  @Column({type: "boolean"})
   public isDelete: boolean;
 }

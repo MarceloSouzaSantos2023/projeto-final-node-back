@@ -12,7 +12,7 @@ export class UserService implements OnModuleInit {
   private readonly repository: Repository<UserEntity>;
 
   async onModuleInit(): Promise<any> {
-    await this.insertBaseUser();
+    // await this.insertBaseUser();
   }
 
   public async findAllUser(payload: Request | any): Promise<any> {
